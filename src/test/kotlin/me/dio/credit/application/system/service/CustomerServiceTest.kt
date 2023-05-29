@@ -15,7 +15,6 @@ import me.dio.credit.application.system.service.impl.CustomerService
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import org.springframework.test.context.ActiveProfiles
 import java.math.BigDecimal
 import java.util.*
 
@@ -26,7 +25,8 @@ class CustomerServiceTest {
   @InjectMockKs lateinit var customerService: CustomerService
 
   @Test
-  fun `should create customer`(){
+  fun `should create customer`()
+  {
     //given
     val fakeCustomer: Customer = buildCustomer()
     every { customerRepository.save(any()) } returns fakeCustomer

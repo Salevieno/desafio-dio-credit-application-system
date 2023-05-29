@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository
 import java.util.*
 
 @Repository
-interface CreditRepository: JpaRepository<Credit, Long> {
+interface CreditRepository: JpaRepository<Credit, Long>
+{
   fun findByCreditCode(creditCode: UUID) : Credit?
 
   @Query(value = "SELECT * FROM CREDIT WHERE CUSTOMER_ID = ?1", nativeQuery = true)
